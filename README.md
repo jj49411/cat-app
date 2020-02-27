@@ -1,4 +1,4 @@
-## Learning Cat
+## Learning Cats
 
 An app that unables users to learn about cat breeds.
 
