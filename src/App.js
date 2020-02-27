@@ -9,6 +9,8 @@ class CatApp extends Component {
       showBreeds: false,
       breedsData:[],
       isLoading: false,
+      breedsName: '',
+      breedsDescription: '',
     };
     
     this.showBreeds = this.showBreeds.bind(this);
@@ -17,7 +19,11 @@ class CatApp extends Component {
   
   showBreeds() {
 
-    this.setState({ showBreeds: true }, () => {
+    this.setState({ 
+      showBreeds: true, 
+      breedsName: '',
+      breedsDescription: '',
+     }, () => {
       document.addEventListener('click', this.closeBreeds);
     });
   }
@@ -35,6 +41,7 @@ class CatApp extends Component {
     )
       .then(response => response.json())
       .then(responseJson => {
+        console.log(responseJson)
         this.setState({
           isLoading: true,
           breedsData: responseJson
@@ -42,13 +49,21 @@ class CatApp extends Component {
       })
   }
 
+  breedsDatail(name, description) {
+    this.setState({
+      breedsName: name,
+      breedsDescription: description,
+    })
+  }
+
 
 
   render() {
+    
     return (
       <div>
         <div className="App">
-        <p>Let's learn about cats!</p>
+        <h1>Let's learn about cats!</h1>
         </div>
         <div className="Dropdown">
           <button id='breedsButton' onClick={this.showBreeds}>
@@ -59,7 +74,7 @@ class CatApp extends Component {
               ? (
                 <div className="Breeds">
                     {this.state.breedsData.map((breed, key) => (
-                      <button key={key}>
+                      <button key={key} onClick={() => this.breedsDatail(breed.name, breed.description)}>
                         {breed.name}
                     </button>
                     ))}
@@ -70,6 +85,20 @@ class CatApp extends Component {
               )
           }
         </div>
+       <div>
+       {(this.state.breedsName !== null) && (this.state.breedsDescription !== null)
+              ? (
+                <div className="Breeds">
+                  <p id='name'>{this.state.breedsName}</p>
+                  <p id='description'>{this.state.breedsDescription}</p>
+                </div>
+              )
+              : (
+                null
+              )
+          }
+       </div>
+          
       </div>
     );
   }

@@ -5,13 +5,15 @@ import CatApp from './App';
 describe('CatApp', () => {
     
     let wrapper;
+    let component;
   
     beforeEach(() => {
     wrapper = shallow(<CatApp />);
+    component = wrapper.instance();
   })
 
   it('shows the title', () => {
-    const text = wrapper.find('p').text();
+    const text = wrapper.find('h1').text();
     expect(text).toEqual("Let's learn about cats!");
   });
 
@@ -20,7 +22,6 @@ describe('CatApp', () => {
   });
 
   it('runs showBreeds function when clicked on the button', () => {
-    const component = wrapper.instance();
     const showBreeds = jest
       .spyOn(component, 'showBreeds')
       .mockImplementation(() => Promise.resolve());
@@ -31,7 +32,17 @@ describe('CatApp', () => {
       expect(showBreeds).toHaveBeenCalled();
   });
 
+  it('renders name when clicked on a breed', () => {
+    wrapper.setState({ breedsName:'American Shorthair' })
+    expect(wrapper.find('#name').text()).toEqual('American Shorthair')
+  });
+
+  it('renders description when clicked on a breed', () => {
+    wrapper.setState({ breedsDescription:'The American Shorthair is known for its longevity, robust health, good looks, sweet personality, and amiability with children, dogs, and other pets.' })
+    expect(wrapper.find('#description').text()).toEqual('The American Shorthair is known for its longevity, robust health, good looks, sweet personality, and amiability with children, dogs, and other pets.')
+  });
   
+
 
 });
 
