@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  padding-top: 100px;
+  padding-bottom: 30px;
 }
 
 .Dropdown {
@@ -8,4 +10,22 @@
 
 .Breeds {
   text-align: center;  
+  margin-left: 290px;
+  margin-right: 290px;
 }
+
+#breedsButton {
+  margin-bottom: 30px;
+}
+
+#option {
+  margin: 3px;
+}
+
+#name {
+font-size: 30px;
+}
+
+#description {
+  font-size: 20px;
+  }

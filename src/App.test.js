@@ -18,7 +18,7 @@ describe('CatApp', () => {
   });
 
   it('has a button to choose a breed', () => {
-    expect(wrapper.find('button')).toHaveLength(1);
+    expect(wrapper.find('Button')).toHaveLength(1);
   });
 
   it('runs showBreeds function when clicked on the button', () => {

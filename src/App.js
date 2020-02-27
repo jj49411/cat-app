@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 import './App.css';
 
 class CatApp extends Component {
@@ -64,20 +66,20 @@ class CatApp extends Component {
     return (
       <div>
         <div className="App">
-        <h1>Let's learn about cats!</h1>
+        <h1 className='display-4 font-weight-light'>Let's learn about cats!</h1>
         </div>
         <div className="Dropdown">
-          <button id='breedsButton' onClick={this.showBreeds}>
+          <Button id='breedsButton' size='lg' onClick={this.showBreeds} variant="outline-info">
             Breeds
-          </button>
+          </Button>
           
           {showBreeds
               ? (
                 <div className="Breeds">
                     {breedsData.map((breed, key) => (
-                      <button key={key} onClick={() => this.breedsDatail(breed.name, breed.description)}>
+                      <Button key={key} id='option' size='sm' variant="outline-secondary" onClick={() => this.breedsDatail(breed.name, breed.description)}>
                         {breed.name}
-                    </button>
+                    </Button>
                     ))}
                 </div>
               )
@@ -90,8 +92,8 @@ class CatApp extends Component {
        {(breedsName !== null) && (breedsDescription !== null)
               ? (
                 <div className="Breeds">
-                  <p id='name'>{breedsName}</p>
-                  <p id='description'>{breedsDescription}</p>
+                  <p id='name' className='display-6 font-weight-light'>{breedsName}</p>
+                  <p id='description' className='display-5 font-weight-light'>{breedsDescription}</p>
                 </div>
               )
               : (
