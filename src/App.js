@@ -59,6 +59,7 @@ class CatApp extends Component {
 
 
   render() {
+    const { breedsData, showBreeds, breedsName, breedsDescription } = this.state;
     
     return (
       <div>
@@ -70,10 +71,10 @@ class CatApp extends Component {
             Breeds
           </button>
           
-          {this.state.showBreeds
+          {showBreeds
               ? (
                 <div className="Breeds">
-                    {this.state.breedsData.map((breed, key) => (
+                    {breedsData.map((breed, key) => (
                       <button key={key} onClick={() => this.breedsDatail(breed.name, breed.description)}>
                         {breed.name}
                     </button>
@@ -86,11 +87,11 @@ class CatApp extends Component {
           }
         </div>
        <div>
-       {(this.state.breedsName !== null) && (this.state.breedsDescription !== null)
+       {(breedsName !== null) && (breedsDescription !== null)
               ? (
                 <div className="Breeds">
-                  <p id='name'>{this.state.breedsName}</p>
-                  <p id='description'>{this.state.breedsDescription}</p>
+                  <p id='name'>{breedsName}</p>
+                  <p id='description'>{breedsDescription}</p>
                 </div>
               )
               : (
