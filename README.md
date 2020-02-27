@@ -1,28 +1,33 @@
-## Learning Cats
+# Learning Cats
 
 An app that unables users to learn about cat breeds.
 
-### To install and run the code
+![Demo Gif](https://media.giphy.com/media/l4vxx6DxqExTLHyrDf/giphy.gif)
 
+## To install and run the code
 
-### To interact with the app
 - Sign up for an API key at https://thecatapi.com/
 - Run `$ npm install`
 - Run `$ npm start`
 
-### To run the test
+## To run the test
 - Run `$ npm test`
 
-### Technologies used
+## Technologies used
 
 - React
 - Jest
 - Enzyme
 
-### How to design the solution
+## How to design the solution
 
+- Start with planning the user stories
+- Create `Breeds` button, displaying the breed options when clicked on the button
+- After click on a breed, show its name and description
+- Add styling for better UX/ UI
+- What to add next: load the cat images
 
-### User stories
+## User stories
 
 ```
 As a user
