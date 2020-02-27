@@ -6,10 +6,12 @@ An app that unables users to learn about cat breeds.
 
 
 ### To interact with the app
-
+- Sign up for an API key at https://thecatapi.com/
+- Run `$ npm install`
+- Run `$ npm start`
 
 ### To run the test
-
+- Run `$ npm test`
 
 ### Technologies used
 
